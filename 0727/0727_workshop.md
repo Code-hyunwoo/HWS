@@ -22,6 +22,22 @@ def duplicated_letters(words):
         if words.count(word)>1:
             answer.add(word)
     return list(answer)       
+
+
+# Basic
+
+def duplicated_letters(words):
+    duplicates = []
+    for word in words:
+        if words.count(word) > 1 and word not in duplicates:
+            duplicates.append(word)
+    return duplicates
+
+# Comprehension
+
+def duplicated_letters(words):
+    # return [word for word in words if words.count(word)>1 and not (word in result or result.add(word))]
+    return list({word for word in words if words.count(word) > 1})
 ```
 
 **['p']**
@@ -52,6 +68,23 @@ def low_and_up(words):
           word = words[idx].lower()
           new_words += word
   return new_words
+
+def low_and_up(word):
+    new_str = ''
+    for idx, char in enumerate(word):
+        if idx % 2 == 1:
+            new_str += char.upper()
+        else:
+            new_str += char.lower()
+    return new_str
+
+# list comprehension
+
+def low_and_up(word):
+    new_str = [char.upper() if idx%2 else char.lower() for idx, char in enumerate(word)]
+    return ''.join(new_str)
+
+
 
 print(low_and_up('apple')) 
 print(low_and_up('banana'))
@@ -93,6 +126,27 @@ def lonely(words):
       else:
         res.append(i)
   return res
+
+
+def lonely(numbers):
+    result = []
+    for idx, num in enumerate(numbers):
+        if idx == 0:
+            result.append(num)
+        if result[-1] != num:
+            result.append(num)
+    return result
+
+
+def lonely(numbers):
+    result = [numbers[0]]
+    for num in numbers:
+        if result[-1] != num:
+            result.append(num)
+    return result
+
+print(lonely([1, 1, 3, 3, 0, 1, 1]))
+print(lonely([4, 4, 4, 3, 3]))
 ```
 
 **[1, 3, 0, 1]**

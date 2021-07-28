@@ -28,6 +28,16 @@ def count_vowels(words):
     total += words.count('o')    
     total += words.count('u')
     return total
+
+def count_vowels(word):
+    vowels = 'aeiou'
+    result = 0
+    for vowel in vowels:
+        result += word.count(vowel)
+    return result
+
+print(count_vowels('apple'))
+print(count_vowels('banana'))
 ```
 
 ​								
@@ -74,6 +84,23 @@ def only_square_area(a, b):  #a = 너비, b = 높이
     for j in list:
         answer.append(j**2)
     return answer
+
+print(only_square_area([32,55,63],[13,32,40,55]))
+
+
+def only_square_area(widths, heights):
+    square_combination = []
+    
+    for width in widths:
+        for height in heights:
+            if width == height:
+                square_combination.append(width * height)
+    
+    return square_combination
+
+def only_square_area(widths, heights):
+    sqaure_combination = [width * height for width in widths for height in heights if width == height]
+    return sqaure_combination
 
 print(only_square_area([32,55,63],[13,32,40,55]))
 ```

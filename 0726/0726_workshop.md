@@ -27,6 +27,20 @@ def get_dict_avg(X):
     for score in X.values():
         total += score
     return total / len(X)
+
+#2
+
+def get_dict_avg(student):
+    scores = []
+
+    for score in student.values():
+        scores.append(score)
+
+    result = sum(scores) / len(student)
+    return result
+
+# 또는 
+sum(student.values()) / len(student.keys())
 ```
 
 ​													
@@ -54,6 +68,23 @@ def count_blood(X):
     data['o'] = X.count('O')
     data['AB'] = X.count('AB')
     return data
+
+def count_blood(X):
+    blood_dict = {}
+    for blood in X:
+        if blood_dict.get(blood):
+            blood_dict[blood] += 1
+        else:
+            blood_dict[blood] = 1
+    return blood_dict
+
+
+def count_blood(blood_types):
+    result = {}
+    for blood in blood_types:
+        result[blood] = result.get(blood, 0) + 1
+    return result
 ```
 
 ​									
+
