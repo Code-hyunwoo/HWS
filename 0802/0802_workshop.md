@@ -19,7 +19,7 @@
 ​									
 
 ```html
-<img src="../image/my_photo.png"alt="ssafy"/>
+<img src="C:\Users\Windows10\Desktop\TIL\ssafy\image"alt="ssafy"/>
 ```
 
 ​																			
@@ -37,8 +37,8 @@ __(a)__와 __(b)__에 들어갈 말과 __(b)__ 로 변경한 코드를 작성하
 ​																								
 
 ```html
-(a) <img src="../image/my_photo.png"/>    상대경로
-(b) <img src="C:\Users\Windows10\Desktop\TIL\ssafy\image"/> 절대경로
+(a) <img src="C:\Users\Windows10\Desktop\TIL\ssafy\image"/> 절대경로
+(b) <img src="../image/my_photo.png"/>    상대경로
 ```
 
 ​																	
