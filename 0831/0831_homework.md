@@ -140,7 +140,7 @@ Django 프로젝트는 render할 template 파일들을 찾을 때,
 
    ​															
 
-   **post**
+   **get**, **post**
 
    ​													
 
@@ -148,8 +148,6 @@ Django 프로젝트는 render할 template 파일들을 찾을 때,
 
    이동하는 url 경로를 작성하시오.
 
-   ​																					
+   ​																																																			
 
-   **post/create/?title=안녕하세요/?content=반갑습니다/?my-site=파이팅**
-
-   ​																															
+   **HOST:PORT/create/?title=안녕하세요&content=반갑습니다&my-site=파이팅**
