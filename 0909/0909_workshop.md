@@ -162,7 +162,9 @@ def delete(request, pk):
     article.delete()
     # messages.add_message(request, messages.WARNING, '게시글이 삭제되었습니다.')
     messages.warning(request, '게시글이 삭제되었습니다.')
-    return redirect('articles:index')
+    return redirect('articles:index')							
 ```
 
 ​																	
+
+​																				
