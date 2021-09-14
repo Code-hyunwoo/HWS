@@ -30,7 +30,7 @@
 <p> 글 내용:{{article.content}}</p>
 <a href="{%url 'articles:detail' article.pk%}"class='text-decoration-none'>DETAIL</a>
 <hr>
-{% endfor %}
+{% endfor %}		
 
 {% endblock content %}       
 ```
