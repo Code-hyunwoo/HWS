@@ -17,7 +17,7 @@
        check_out text,
        grade text,
        price integer
-   )
+   )				
    ```
 
    ​																			
