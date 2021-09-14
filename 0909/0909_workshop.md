@@ -15,7 +15,7 @@
 {% load static %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-{% endblock css %}
+{% endblock css %}   
 
 {% block content %}
     <img src="{% static 'articles/black.jpg' %}" alt="image" style="width:500px;height:300px">
