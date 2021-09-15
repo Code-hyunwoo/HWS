@@ -17,7 +17,7 @@
        check_out text,
        grade text,
        price integer
-   )				
+   )
    ```
 
    ​																			
@@ -53,7 +53,7 @@
 5) grade 별로 분류하고 분류된 grade 개수를 내림차순으로 조회하시오.
 
    ```python
-   SELECT grade, COUNT(*) FROM hotels GROUP BY grade ORDER BY COUNT(*) DESC;
+   SELECT grade, COUNT(grade) FROM hotels GROUP BY grade ORDER BY COUNT(grade) DESC;
    ```
 
    
@@ -69,7 +69,7 @@
 7) 지상층 객실이면서 2020년 1월 4일에 체크인 한 객실의 목록을 price 오름차순으로 조회하시오.
 
    ```python
-   SELECT * FROM hotels WHERE NOT room_num LIKE'B%' AND check_in='2020-01-04' ORDER BY price;
+   SELECT * FROM hotels WHERE room_num NOT LIKE'B%' AND check_in='2020-01-04' ORDER BY price;
    ```
 
    
@@ -112,7 +112,7 @@ SELECT age FROM users_user;
 ```
 
 ```python
-User.objects.all().values('age')
+User.objects.values('age')
 ```
 
 ​			
@@ -196,6 +196,8 @@ user = User.objects.get(first_name='옥자',last_name='김')
 user.country = '경기도'
 user.save()
 user.country
+
+User.objects.filter(first_name='옥자',last_name='김').update(country='경기도')
 ```
 
 ​			
@@ -225,7 +227,7 @@ ORDER BY balance DESC LIMIT 4;
 ```
 
 ```python
-User.objects.order_by('-balance')[:4].values('first_name','last_name','balance')
+User.objects.order_by('-balance').values('first_name','last_name','balance')[:4]
 ```
 
 ​			
@@ -304,6 +306,7 @@ WHERE country = '제주특별자치도' ORDER BY banlance DESC LIMIT 1;
 
 ```python
 from django.db.models import MAX
-User.objects.filter(country='제주특별자치도').order_by('-balance')[:1].values('first_name')
+User.objects.filter(country='제주특별자치도').order_by('-balance').values('first_name')[:1]
+User.objects.filter(country='제주특별자치도').order_by('-balance').values('first_name')[0]
 ```
 
