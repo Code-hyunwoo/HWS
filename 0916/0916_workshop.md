@@ -48,3 +48,4 @@ def change_password(request):
     return render(request, 'accounts/change_password.html',context)
 ```
 
+​					
