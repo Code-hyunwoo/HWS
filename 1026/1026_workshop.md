@@ -121,7 +121,7 @@ def music_detail(request, music_pk):
     elif request.method == 'DELETE':
         music.delete()
         data = {
-            'delete': f'댓글 {music_pk}번이 삭제되었습니다.'
+            'delete': f'음악 {music_pk}번이 삭제되었습니다.'
         }
         return Response(data, status=status.HTTP_204_NO_CONTENT)
 
