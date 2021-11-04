@@ -1,0 +1,62 @@
+# :boom: Practice
+
+---
+
+
+
+### 					![image-20211104152241760](1104_practice.assets/image-20211104152241760.png)															
+
+
+
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+      <h1>Cat Image</h1>
+      <button @click="getImg">Get Cat</button>
+    <img v-if="imgSrc" :src="imgSrc" alt="sample img">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const API_URL = "https://api.thecatapi.com/v1/images/search"
+    // const API_URL = "https://dog.ceo/api/breeds/image/random"
+    const app = new Vue({
+      el: '#app',
+      data: {
+        imgSrc: '',
+      },
+      methods: {
+        getImg: function () {
+          axios.get(API_URL)
+            .then(response => {
+              this.imgSrc = response.data[0].url
+            //   this.imgSrc = response.data.message  
+            })
+        }
+      },
+      created: function () {
+          this.getImg()
+      },
+      updated: function () {
+          console.log(this.imgSrc)
+      }
+    })
+  </script>
+</body>
+</html>
+
+```
+
+​																															
+
+​																																					
+
