@@ -24,7 +24,7 @@
       </span>
     </div>
     <router-view/>
-  </div>
+  </div>												
 </template>
 
 <script>
