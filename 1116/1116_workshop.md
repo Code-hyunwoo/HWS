@@ -104,7 +104,7 @@ def todo_update_delete(request, todo_pk):
         return Response({ 'id': todo_pk })
 ```
 
-​																								
+​																															
 
 ### **vue-client/Login.vue**	
 
